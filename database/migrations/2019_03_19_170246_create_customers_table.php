@@ -15,17 +15,17 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInterger('user_id');
-            $table->string('first_name',64);
-            $table->string('last_name',64);
+            $table->unsignedBigInteger('user_id');
+            $table->string('first_name', 64);
+            $table->string('last_name', 64);
             $table->string('email')->unique();
-            $table->string('password',96);
-            $table->timestamps('email_verified_at')->nullable();
+            $table->string('password', 96);
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('mobile_number')->nullable();
-            $table->tinyInterger('active')->default(1);
+            $table->tinyInteger('active')->default(1);
             $table->string('facebook_id')->nullable();
             $table->string('google_id')->nullable();
-            $table->string('type',128)->nullable();
+            $table->string('type', 128)->nullable();
             $table->text('address')->nullable();
             $table->rememberToken();
             $table->softDeletes();
