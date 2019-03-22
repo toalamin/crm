@@ -13,12 +13,14 @@ class CreateLeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('leads', function (Blueprint $table) {
+       
+            Schema::create('leads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInterger('meeting_id');
-            $table->string('status',32);
-            $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('cascade');
+            $table->unsignedBigInteger('meeting_id');
+            $table->string('status', 32);
             $table->timestamps();
+            $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('cascade');
+      
         });
     }
 
