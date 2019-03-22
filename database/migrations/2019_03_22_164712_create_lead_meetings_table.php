@@ -11,9 +11,9 @@ class CreateLeadMeetingsTable extends Migration {
      *
      * @return void
      */
-    public function up() {
+   public function up()
+    {
         Schema::create('lead_meetings', function (Blueprint $table) {
-
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lead_id');
             $table->string('subject', 128);
@@ -33,7 +33,8 @@ class CreateLeadMeetingsTable extends Migration {
      *
      * @return void
      */
-    public function down() {
+    public function down()
+    {
         Schema::dropIfExists('lead_meetings');
     }
 
