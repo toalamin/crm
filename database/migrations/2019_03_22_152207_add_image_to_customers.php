@@ -14,7 +14,7 @@ class AddImageToCustomers extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-           $table->integer('image');
+           $table->string('image',200);
         });
     }
 
